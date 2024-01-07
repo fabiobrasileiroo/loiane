@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable,interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-exemplos-pipes',
@@ -14,4 +16,38 @@ export class ExemplosPipesComponent {
     dataLancamento: new Date(2019, 2, 11),
     url: 'https://a.co/d/5RzkYVu'
   };
+  livros: string[] = ['livro1','livro2'] 
+  filtro:any;
+
+  addCurso(valor:string ) {
+    const novoValorSemEspacos = valor.replace(/^\s+/, '');
+    if (novoValorSemEspacos.match(/[a-zA-Z0-9]+/g)) {
+    this.livros.push(novoValorSemEspacos)
+    console.log(this.livros)
+    }
+  }
+
+  obterCursos() {
+    if( this.livros.length === 0 || this.filtro === undefined
+      || this.filtro.trim() === "") {
+      return this.livros;
+    }
+    let filter = this.filtro.toLocaleString().toLowerCase()
+    return this.livros.filter((v:string) => v.toLowerCase().includes(filter))
+  }
+
+  valorAsync = new Promise((resolve, reject)=>{
+    setTimeout(
+      () => resolve('Valor assíncrono')
+      , 2000
+    )
+  })
+
+  valorAsync2 = new Observable<string>(observable => {
+    setTimeout(() => {
+      observable.next('Valor assíncrono 2');
+    }, 2000);
+  });
+  constructor () {
+  }
 }
