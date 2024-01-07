@@ -1,0 +1,20 @@
+<p HighlightMouse>
+    Texto com highlight quando passo o mouse.
+</p>
+<p [highlight]="'red'" [defaultColor]="'grey'">
+    Texto com hightlight quando passo o mouse.
+</p>
+
+<h4>Diretiva Estrutura customizada - ngElse</h4>
+
+<span *ngIf="mostrarCursos; else naoMostrarCursos">
+    Lista de cursos aqui.
+</span>
+<ng-template #naoMostrarCursos>
+    Não existe cursos para serem listados.
+</ng-template>
+
+<br>
+<button (click)="onMostrarCursos()">
+    Mostar ou esconder curso
+</button>

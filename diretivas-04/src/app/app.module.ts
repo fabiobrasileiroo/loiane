@@ -12,6 +12,10 @@ import { DiretivaNgclassComponent } from './diretiva-ngclass/diretiva-ngclass.co
 import { DiretivaNgstyleComponent } from './diretiva-ngstyle/diretiva-ngstyle.component';
 import { FormsModule } from '@angular/forms';
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
+import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
+import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
+import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
+import { HighlightDirective } from './shared/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { OperadorElvisComponent } from './operador-elvis/operador-elvis.componen
     DiretivaNgclassComponent,
     DiretivaNgstyleComponent,
     OperadorElvisComponent,
+    HighlightMouseDirective,
+    DiretivasCustomizadasComponent,
+    FundoAmareloDirective,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
