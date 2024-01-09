@@ -7,9 +7,9 @@ import { CursosService } from './cursos.service';
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent {
-
+  cursos: any[];
   constructor(private cursoService: CursosService) {
-   
+    this.cursos = this.cursoService.getCursos() 
   }
 
 }
