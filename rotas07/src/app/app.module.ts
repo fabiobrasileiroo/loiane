@@ -13,6 +13,7 @@ import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso
 */
 import { CursosService } from './cursos/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
+import { AlunosModule } from './alunos/alunos.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CursosModule } from './cursos/cursos.module';
     BrowserModule,
     BrowserAnimationsModule,
     CursosModule,
-    AppRoutingModule,
+    AlunosModule,
+    AppRoutingModule
   ],
   providers: [
     CursosService
