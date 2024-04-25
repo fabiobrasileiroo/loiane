@@ -31,7 +31,7 @@ import { AlunosModule } from './alunos/alunos.module';
     BrowserAnimationsModule,
     CursosModule,
     AlunosModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [
     CursosService

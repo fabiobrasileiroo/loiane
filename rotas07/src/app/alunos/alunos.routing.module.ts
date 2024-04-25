@@ -1,18 +1,20 @@
-import { Component, NgModule } from "@angular/core";
-import { Route, RouterModule } from "@angular/router";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 import { AlunosComponent } from "./alunos.component";
-import { AlunoDetalheComponent } from "./aluno-detalhe/aluno-detalhe.component";
+import { AlunosDetalheComponent } from "./alunos-detalhe/alunos-detalhe.component";
 import { AlunoFormComponent } from "./aluno-form/aluno-form.component";
 
-const alunosRoutes = [
-  {path: 'alunos', component: AlunosComponent},
-  {path: 'alunos/:id', component: AlunoDetalheComponent},
-  {path: 'alunos/:id/editar', component: AlunoFormComponent},
-  {path: 'alunos/novo', component: AlunoFormComponent}
+const alunosRoutes: Routes= [
+    { path: 'alunos', component: AlunosComponent, children:[
+        { path: 'novo', component: AlunoFormComponent },
+        { path: ':id', component: AlunosDetalheComponent },
+        { path: ':id/editar', component: AlunoFormComponent },
+    ]},
 ]
 
 @NgModule({
-  imports: [RouterModule.forChild(alunosRoutes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(alunosRoutes)],
+    exports: [RouterModule]
 })
-export class AlunosRoutingModule {}
+
+export class AlunosRoutingModule { }

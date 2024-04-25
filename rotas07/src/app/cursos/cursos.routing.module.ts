@@ -8,7 +8,6 @@ const cursosRoutes: Routes = [
   { path: 'cursos', component: CursosComponent },
   { path: 'curso/:id', component: CursoDetalheComponent },
   { path: 'naoEncontrado', component: CursoNaoEncontradoComponent },
-  
 ];
 
 
@@ -16,4 +15,4 @@ const cursosRoutes: Routes = [
   imports: [RouterModule.forChild(cursosRoutes)],
   exports: [RouterModule]
 })
-export class cursosRoutesModule{ }
+export class CursosRoutingModule { }
