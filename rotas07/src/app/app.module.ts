@@ -12,8 +12,10 @@ import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.comp
 import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 */
 import { CursosService } from './cursos/cursos.service';
-import { CursosModule } from './cursos/cursos.module';
-import { AlunosModule } from './alunos/alunos.module';
+import { AuthService } from './login/auth.service';
+import { FormsModule } from '@angular/forms';
+// import { CursosModule } from './cursos/cursos.module';
+// import { AlunosModule } from './alunos/alunos.module';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,14 @@ import { AlunosModule } from './alunos/alunos.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CursosModule,
-    AlunosModule,
-    AppRoutingModule
+    // CursosModule,
+    // AlunosModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    CursosService
+    CursosService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
