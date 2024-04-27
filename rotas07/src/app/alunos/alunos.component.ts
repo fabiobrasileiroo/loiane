@@ -4,15 +4,13 @@ import { AlunosService } from './alunos.service';
 @Component({
   selector: 'app-alunos',
   templateUrl: './alunos.component.html',
-  styleUrls: ['./alunos.component.css']
+  styleUrls: ['./alunos.component.css'],
 })
 export class AlunosComponent implements OnInit {
-  
-  protected alunos: any[] = []
+  protected alunos: any[] = [];
 
-  constructor(private alunosService: AlunosService) {
-  }
+  constructor(private alunosService: AlunosService) {}
   ngOnInit() {
-    this.alunos = this.alunosService.getAlunos()
+    this.alunos = this.alunosService.getAlunos();
   }
 }

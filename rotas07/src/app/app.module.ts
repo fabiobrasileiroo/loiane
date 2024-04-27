@@ -14,6 +14,9 @@ import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso
 import { CursosService } from './cursos/cursos.service';
 import { AuthService } from './login/auth.service';
 import { FormsModule } from '@angular/forms';
+import { AuthGuardService } from './guards/auth-guard.service';
+import { CursosGuard } from './guards/cursos.guard';
+import { AlunosGuard } from './guards/alunos.guard';
 // import { CursosModule } from './cursos/cursos.module';
 // import { AlunosModule } from './alunos/alunos.module';
 
@@ -38,7 +41,10 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     CursosService,
-    AuthService
+    AuthService,
+    AuthGuardService,
+    CursosGuard,
+    AlunosGuard
   ],
   bootstrap: [AppComponent]
 })
